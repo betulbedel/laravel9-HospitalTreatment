@@ -1,13 +1,3 @@
-</head>
-
-<!-- END HEAD -->
-
-<!-- BEGIN BODY -->
-<body class="padTop53 " >
-
-<!-- MAIN WRAPPER -->
-<div id="wrap" >
-
 
     <!-- HEADER SECTION -->
     <div id="top">
@@ -20,9 +10,7 @@
             <header class="navbar-header">
 
                 <a href="index.html" class="navbar-brand">
-                    <img src="assets/img/logo.png" alt="" />
-
-                </a>
+                    <img src="{{asset('assets')}}/admin/assets/img/logo.png" alt="" /></a>
             </header>
             <!-- END LOGO SECTION -->
             <ul class="nav navbar-top-links navbar-right">

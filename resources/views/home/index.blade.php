@@ -10,9 +10,9 @@
     <div class="page-hero bg-image overlay-dark" style="background-image: url({{asset('assets')}}/img/bg_image_1.jpg);">
         <div class="hero-section">
             <div class="container text-center wow zoomIn">
-                <span class="subhead">Let's make your life happier</span>
-                <h1 class="display-4">Healthy Living</h1>
-                <a href="#" class="btn btn-primary">Let's Consult</a>
+                <span class="subhead">HAYATINIZI YENİLEYELİM</span>
+                <h1 class="display-4">Sağlıklı ve Mutlu Bir Yaşam</h1>
+                <a href="#" class="btn btn-primary">Başvuru İçin</a>
             </div>
         </div>
     </div>
@@ -27,7 +27,7 @@
                             <div class="circle-shape bg-secondary text-white">
                                 <span class="mai-chatbubbles-outline"></span>
                             </div>
-                            <p><span>Chat</span> with a doctors</p>
+                            <p><span>Doktorlarla</span> sohbet</p>
                         </div>
                     </div>
                     <div class="col-md-4 py-3 py-md-0">
@@ -56,7 +56,7 @@
                     <div class="col-lg-6 py-3 wow fadeInUp">
                         <h1>Welcome to Your Health <br> Center</h1>
                         <p class="text-grey mb-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Accusantium aperiam earum ipsa eius, inventore nemo labore eaque porro consequatur ex aspernatur. Explicabo, excepturi accusantium! Placeat voluptates esse ut optio facilis!</p>
-                        <a href="about.html" class="btn btn-primary">Learn More</a>
+                        <a href="about.blade.php" class="btn btn-primary">Learn More</a>
                     </div>
                     <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
                         <div class="img-place custom-img-1">
@@ -70,7 +70,7 @@
 
     <div class="page-section">
         <div class="container">
-            <h1 class="text-center mb-5 wow fadeInUp">Our Doctors</h1>
+            <h1 class="text-center mb-5 wow fadeInUp">Doktorlarımız</h1>
 
             <div class="owl-carousel wow fadeInUp" id="doctorSlideshow">
                 <div class="item">
@@ -83,7 +83,7 @@
                             </div>
                         </div>
                         <div class="body">
-                            <p class="text-xl mb-0">Dr. Stein Albert</p>
+                            <p class="text-xl mb-0">Dr. İlayda Kartal</p>
                             <span class="text-sm text-grey">Cardiology</span>
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                             </div>
                         </div>
                         <div class="body">
-                            <p class="text-xl mb-0">Dr. Alexa Melvin</p>
+                            <p class="text-xl mb-0">Dr. Efe Yılmaz</p>
                             <span class="text-sm text-grey">Dental</span>
                         </div>
                     </div>
@@ -162,12 +162,12 @@
                             <div class="post-category">
                                 <a href="#">Covid19</a>
                             </div>
-                            <a href="blog-details.html" class="post-thumb">
+                            <a href="blog-details.blade.php" class="post-thumb">
                                 <img src="{{asset('assets')}}/img/blog/blog_1.jpg" alt="">
                             </a>
                         </div>
                         <div class="body">
-                            <h5 class="post-title"><a href="blog-details.html">List of Countries without Coronavirus case</a></h5>
+                            <h5 class="post-title"><a href="blog-details.blade.php">List of Countries without Coronavirus case</a></h5>
                             <div class="site-info">
                                 <div class="avatar mr-2">
                                     <div class="avatar-img">
@@ -186,12 +186,12 @@
                             <div class="post-category">
                                 <a href="#">Covid19</a>
                             </div>
-                            <a href="blog-details.html" class="post-thumb">
+                            <a href="blog-details.blade.php" class="post-thumb">
                                 <img src="{{asset('assets')}}/img/blog/blog_2.jpg" alt="">
                             </a>
                         </div>
                         <div class="body">
-                            <h5 class="post-title"><a href="blog-details.html">Recovery Room: News beyond the pandemic</a></h5>
+                            <h5 class="post-title"><a href="blog-details.blade.php">Recovery Room: News beyond the pandemic</a></h5>
                             <div class="site-info">
                                 <div class="avatar mr-2">
                                     <div class="avatar-img">
@@ -210,12 +210,12 @@
                             <div class="post-category">
                                 <a href="#">Covid19</a>
                             </div>
-                            <a href="blog-details.html" class="post-thumb">
+                            <a href="blog-details.blade.php" class="post-thumb">
                                 <img src="{{asset('assets')}}/img/blog/blog_3.jpg" alt="">
                             </a>
                         </div>
                         <div class="body">
-                            <h5 class="post-title"><a href="blog-details.html">What is the impact of eating too much sugar?</a></h5>
+                            <h5 class="post-title"><a href="blog-details.blade.php">What is the impact of eating too much sugar?</a></h5>
                             <div class="site-info">
                                 <div class="avatar mr-2">
                                     <div class="avatar-img">
@@ -230,7 +230,7 @@
                 </div>
 
                 <div class="col-12 text-center mt-4 wow zoomIn">
-                    <a href="blog.html" class="btn btn-primary">Read More</a>
+                    <a href="blog.blade.php" class="btn btn-primary">Read More</a>
                 </div>
 
             </div>
