@@ -27,40 +27,43 @@
                     <div class="row">
                         <div class="col-lg-20">
                             <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    Basic Elements
-                                </div>
+
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            <form role="form">
+                                            <form role="form" action="/home/admin/category/store" method="post">
+                                                @csrf
                                                 <div class="form-group">
-                                                    <label>e-mail</label>
-                                                    <input class="form-control">
-                                                    <p class="help-block">Example block-level help text here.</p>
+                                                    <label>Title</label>
+                                                    <input  type="text" class="form-control" name="title" placeholder="Title">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Password</label>
-                                                    <input class="form-control" placeholder="Enter text">
+                                                    <label>Keywords</label>
+                                                    <input  type="text" class="form-control" name="keywords" placeholder="Keywords">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Static Control</label>
-                                                    <p class="form-control-static">email@example.com</p>
+                                                    <label>Description</label>
+                                                    <input  type="text" class="form-control" name="description" placeholder="Description">
                                                 </div>
+
                                                 <div class="form-group">
-                                                    <label>File input</label>
-                                                    <input type="file" />
+                                                    <label for="exampleInputFile">Image</label>
+                                                    <input type="file" id="exampleInputFile" name="image">
+
                                                 </div>
-                                                <button type="submit" class="btn btn-default">Submit Button</button>
+
+                                        <div class="form-group">
+                                            <label>Status</label>
+                                        <select class="form-control" name="status">
+                                            <option>True</option>
+                                            <option>False</option>
+                                        </select>
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Save</button>
+
+                                    </div>
 
 
-
-
-
-                </div>
-
-                <!--END BLOCK SECTION -->
-            <hr />
 
 
 

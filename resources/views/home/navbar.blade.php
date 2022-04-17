@@ -20,22 +20,22 @@
         <div class="collapse navbar-collapse" id="navbarSupport">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="/home/index">Anasayfa</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">About Us</a>
+                    <a class="nav-link" href="/home/about">Hakkımızda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="doctors.html">Doctors</a>
+                    <a class="nav-link" href="/home/doctors">Doktorlarımız</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="blog.html">News</a>
+                    <a class="nav-link" href="/home/blog">Haberlerimiz</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
+                    <a class="nav-link" href="/home/contact">İletişim</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-primary ml-lg-3" href="#">Login / Register</a>
+                    <a class="btn btn-primary ml-lg-3" href="#">Giriş / Kayıt ol</a>
                 </li>
             </ul>
         </div> <!-- .navbar-collapse -->
