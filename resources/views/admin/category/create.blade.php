@@ -59,7 +59,7 @@
                                             <option>False</option>
                                         </select>
                                         </div>
-                                        <button type="submit" class="btn btn-default">Save</button>
+                                        <button type="submit" class="btn btn-info">Save</button>
 
                                     </div>
 
