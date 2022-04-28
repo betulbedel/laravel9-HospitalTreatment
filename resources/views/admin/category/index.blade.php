@@ -11,7 +11,7 @@
         <div class="inner" style="min-height: 700px;">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1> Category List </h1>
+                    <a href ="{{route('admin.category.create')}}" class="btn btn-info btn-lg btn-round" style="width: 200px">Add Category</a>
                 </div>
             </div>
             <hr />
@@ -43,9 +43,9 @@
                                 <td>{{$rs->description }}</td>
                                 <td>{{$rs->image }}</td>
                                 <td>{{$rs->status }}</td>
-                                <td><a href="/home/admin/category/edit/{{$rs->id }}" class="btn btn-info btn-sm">Edit</a> </td>
-                                <td><a href="/home/admin/category/delete/{{$rs->id }}" class="btn btn-danger btn-sm">Delete</a></td>
-                                <td><a href="/home/admin/category/show/{{$rs->id }}" class="btn btn-success btn-sm">Show</a></td>
+                                <td><a href="{{route('admin.category.edit',['id'=>$rs->id ])}}" class="btn btn-info btn-sm">Edit</a> </td>
+                                <td><a href="{{route('admin.category.destroy',['id'=>$rs->id ])}}" onclick="return confirm('Deleting!! Are you sure?')" class="btn btn-danger btn-sm">Delete</a></td>
+                                <td><a href="{{route('admin.category.show',['id'=>$rs->id ])}}" class="btn btn-success btn-sm">Show</a></td>
                             </tr>
 
                             @endforeach

@@ -12,12 +12,12 @@
                 <div class="inner" style="min-height: 700px;">
             <div class="row">
                 <div class="col-lg-6">
-                    <a href ="/home/admin/category/edit/{{$data->id}}" class="btn btn-info btn-lg btn-round" style="width: 200px">Edit</a>
+                    <a href ="{{route('admin.category.edit',['id'=>$data->id ])}}" class="btn btn-info btn-lg btn-round" style="width: 200px">Edit</a>
                     <hr />
 
                 </div>
                 <div class="col-lg-6">
-                    <a href ="/home/admin/category/destroy/{{$data->id}}" onclick="return confirm('Deleting!! Are you sure?')" class="btn btn-danger btn-lg btn-round" style="width: 200px">Delete</a>
+                    <a href ="{{route('admin.category.destroy',['id'=>$data->id ])}}" onclick="return confirm('Deleting!! Are you sure?')" class="btn btn-danger btn-lg btn-round" style="width: 200px">Delete</a>
                     <hr/>
             </div>
 

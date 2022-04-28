@@ -31,7 +31,7 @@
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            <form role="form" action="/home/admin/category/update/{{$data->id}}" method="post">
+                                            <form role="form" action="{{route('admin.category.update',['id'=>$data->id ])}}" method="post">
                                                 @csrf
                                                 <div class="form-group">
                                                     <label>Title</label>
@@ -60,7 +60,7 @@
                                             <option>False</option>
                                         </select>
                                         </div>
-                                        <button type="submit" class="btn btn-info">Update Data</button>
+                                                <button type="submit" class="btn btn-info">Update Data</button>
 
 
                                     </div>
