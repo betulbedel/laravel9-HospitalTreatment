@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPanel\AdminPoliclinicController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
@@ -45,4 +46,14 @@ Route::post('/update/{id}',  'update')->name('update');
 Route::get('/destroy/{id}',  'destroy')->name('destroy');
 Route::get('/show/{id}',  'show')->name('show');
 });
+//ADMIN POLICLINIC CONTROLLERS//
+    Route::prefix('/policlinic')->name('policlinic.')->controller(AdminPoliclinicController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create',  'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/edit/{id}',  'edit')->name('edit');
+        Route::post('/update/{id}',  'update')->name('update');
+        Route::get('/destroy/{id}',  'destroy')->name('destroy');
+        Route::get('/show/{id}',  'show')->name('show');
+    });
 });
