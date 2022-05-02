@@ -59,8 +59,6 @@ class AdminPoliclinicController extends Controller
         $data->detail = $request->detail;
         $data->date = $request->date;
         $data->specialist = $request->specialist;
-        $data->resume = $request->resume;
-
         $data->status = $request->status;
         if ($request->file('image')) {
             $data->image= $request->file('image')->store('images');
@@ -125,7 +123,6 @@ class AdminPoliclinicController extends Controller
         $data->detail = $request->detail;
         $data->date = $request->date;
         $data->specialist = $request->specialist;
-        $data->resume = $request->resume;
         if ($request->file('image')) {
             $data->image= $request->file('image')->store('images');
         }
