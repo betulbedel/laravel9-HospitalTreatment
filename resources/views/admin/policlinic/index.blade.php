@@ -25,10 +25,10 @@
                                 <th>Id</th>
                                 <th>Category</th>
                                 <th>Title</th>
-                                <th>Detail</th>
                                 <th>Date</th>
                                 <th>Specialist</th>
                                 <th>İmage</th>
+                                <th>İmage Gallery</th>
                                 <th>Status</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
@@ -43,7 +43,7 @@
                                 <td>{{$rs->id }}</td>
                                 <td> {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title)}} </td>
                                 <td>{{$rs->title }}</td>
-                                <td>{{$rs->detail }}</td>
+
                                 <td>{{$rs->date }}</td>
                                 <td>{{$rs->specialist }}</td>
                                 <td>
@@ -51,6 +51,14 @@
                                         <img src="{{Storage::url($rs->image)}}" style="height: 40px">
                                     @endif
                                 </td>
+                               <td>
+                                   <a href="{{route('admin.image.index',['pid'=>$rs->id ])}}"
+                                   onclick="return !window.open(this.href, '', 'top=50 left=100 width=1100, height=700')" >
+                                       <img src="{{asset('assets')}}/admin/assets/img/imagegallery.jpg" style="height: 40px" >
+                                   </a>
+
+                               </td>
+
                                 <td>{{$rs->status }}</td>
                                 <td><a href="{{route('admin.policlinic.edit',['id'=>$rs->id ])}}" class="btn btn-info btn-sm">Edit</a> </td>
                                 <td><a href="{{route('admin.policlinic.destroy',['id'=>$rs->id ])}}" onclick="return confirm('Deleting!! Are you sure?')" class="btn btn-danger btn-sm">Delete</a></td>

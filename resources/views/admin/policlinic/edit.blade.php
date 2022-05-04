@@ -1,6 +1,10 @@
 @extends('layouts.adminbase')
 
 @section('title','Edit Policlinic: ' .$data->title)
+@section('head')
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
+@endsection
 
 @section('content')
 
@@ -9,7 +13,7 @@
     <div id="content">
 
         <div class="inner" style="min-height: 700px;">
-            <div class="row">
+            <div class="row" >
                 <div class="col-lg-12">
                     <h2> Edit Policlinic:{{$data->title}} </h2>
                 </div>
@@ -18,8 +22,8 @@
             <!--PAGE CONTENT -->
             <div id="content">
 
-                <div class="inner" style="...">
-                    <div class="row">
+                <div class="inner" style="width:750px">
+                    <div class="row" style="width: 750px">
                         <div class="col-lg-20">
                             <h3 class="page-header">Policlinic Elements </h3>
                         </div>
@@ -29,7 +33,7 @@
                             <div class="panel panel-default">
 
                                 <div class="panel-body">
-                                    <div class="row">
+                                    <div class="row" style="width:1000px">
                                         <div class="col-lg-6">
                                             <form role="form" action="{{route('admin.policlinic.update',['id'=>$data->id ])}}" method="post" enctype="multipart/form-data">
                                                 @csrf
@@ -68,8 +72,10 @@
                                                         <input  type="text" class="form-control" name="specialist" placeholder="Specialist" value="{{$data->specialist}}">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Detail</label>
-                                                        <input  type="text" class="form-control" name="detail" placeholder="Detail" value="{{$data->detail}}">
+                                                        <label>Detail Inf</label>
+                                                        <textarea   class="textarea"  id="detail" name="detail" >
+                                                            {{$data->detail}}
+                                                        </textarea>
                                                     </div>
 
                                                 <div class="form-group">
@@ -106,7 +112,18 @@
 
     <!--END MAIN WRAPPER -->
 
+@endsection
+@section('foot')
+                                        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script>
+    $(function () {
 
+        //summernote
+        $('.textarea').summernote()
 
+    })
+    </script>
 
 @endsection
+
+
