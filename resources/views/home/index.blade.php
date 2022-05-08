@@ -2,53 +2,17 @@
 
 @section('title','Anasayfa')
 
-@section('head')
+@section('slider')
+    @include('home.slider')
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="{{asset('assets')}}/js/ss.js"></script>
 
+@endsection
 
 
 @section('content')
-    <div class="page-hero bg-image overlay-dark" style="background-image: url({{asset('assets')}}/img/bg_image_1.jpg);">
-        <div class="hero-section">
-            <div class="container text-center wow zoomIn">
-                <span class="subhead">HAYATINIZI YENİLEYELİM</span>
-                <h1 class="display-4">Sağlıklı ve Mutlu Bir Yaşam</h1>
-                <a href="#" class="btn btn-primary">Başvuru İçin</a>
-            </div>
-        </div>
-    </div>
 
 
-    <div class="bg-light">
-        <div class="page-section py-3 mt-md-n5 custom-index">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-4 py-3 py-md-0">
-                        <div class="card-service wow fadeInUp">
-                            <div class="circle-shape bg-secondary text-white">
-                                <span class="mai-chatbubbles-outline"></span>
-                            </div>
-                            <p><span>Doktorlarla</span> sohbet</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 py-3 py-md-0">
-                        <div class="card-service wow fadeInUp">
-                            <div class="circle-shape bg-primary text-white">
-                                <span class="mai-shield-checkmark"></span>
-                            </div>
-                            <p><span>One</span>-Health Protection</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 py-3 py-md-0">
-                        <div class="card-service wow fadeInUp">
-                            <div class="circle-shape bg-accent text-white">
-                                <span class="mai-basket"></span>
-                            </div>
-                            <p><span>One</span>-Health Pharmacy</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- .page-section -->
 
         <div class="page-section pb-0">
             <div class="container">
@@ -83,8 +47,8 @@
                             </div>
                         </div>
                         <div class="body">
-                            <p class="text-xl mb-0">Dr. İlayda Kartal</p>
-                            <span class="text-sm text-grey">Cardiology</span>
+                            <p class="text-xl mb-0">Dr. Betül Kaya</p>
+                            <span class="text-sm text-grey">Kalp ve Damar Cerrahı</span>
                         </div>
                     </div>
                 </div>
@@ -113,8 +77,8 @@
                             </div>
                         </div>
                         <div class="body">
-                            <p class="text-xl mb-0">Dr. Rebecca Steffany</p>
-                            <span class="text-sm text-grey">General Health</span>
+                            <p class="text-xl mb-0">Dr.Mehtap Karahan</p>
+                            <span class="text-sm text-grey">Kadın Doğum Uzmanı</span>
                         </div>
                     </div>
                 </div>
