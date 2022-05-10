@@ -2,6 +2,7 @@
 
 @section('title','Anasayfa')
 
+
 @section('slider')
     @include('home.slider')
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -34,24 +35,27 @@
 
     <div class="page-section">
         <div class="container">
-            <h1 class="text-center mb-5 wow fadeInUp">Doktorlarımız</h1>
+            <h1 class="text-center mb-5 wow fadeInUp">Our Policlinic Services</h1>
 
             <div class="owl-carousel wow fadeInUp" id="doctorSlideshow">
+                @foreach($policliniclist1 as $rs)
                 <div class="item">
                     <div class="card-doctor">
                         <div class="header">
-                            <img src="{{asset('assets')}}/img/doctors/doctor_1.jpg" alt="">
+                            <img src="{{Storage::url($rs->image)}}" style="height: 550px; width: 640px">
                             <div class="meta">
                                 <a href="#"><span class="mai-call"></span></a>
                                 <a href="#"><span class="mai-logo-whatsapp"></span></a>
                             </div>
                         </div>
                         <div class="body">
-                            <p class="text-xl mb-0">Dr. Betül Kaya</p>
-                            <span class="text-sm text-grey">Kalp ve Damar Cerrahı</span>
+                            <p class="text-xl mb-0">Dr. Jesccica Column</p>
+                            <span class="text-sm text-grey">Cardiologist</span>
                         </div>
                     </div>
                 </div>
+                @endforeach
+
                 <div class="item">
                     <div class="card-doctor">
                         <div class="header">
@@ -67,6 +71,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="item">
                     <div class="card-doctor">
                         <div class="header">
