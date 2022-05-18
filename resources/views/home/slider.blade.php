@@ -8,16 +8,12 @@
             <div class="container text-capitalize font-medium wow zoomIn" style="color: #00D9A5 ">
                 <span class="subhead">HAYATINIZI YENİLEYELİM </span>
                 <h1 {{$rs->title}}</h1>
-                <a href="#" class="btn btn-primary">Başvuru İçin</a>
+                <a href="  {{route('policlinic' ,['id'=>$rs->id])}}" class="btn btn-primary">DETAIL</a>
+
             </div>
            </div>
         @endforeach
-        <div class="swiper-slide" style="background-image: url({{asset('assets')}}/img/doctor.jpg);">
-            <div class="container text-center wow zoomIn" style="color: #00D9A5 ">
-                <span class="subhead">HAYATINIZI YENİLEYELİM </span>
-                <h1 class="display-4">Sağlıklı ve Mutlu Bir Yaşam</h1>
-                <a href="#" class="btn btn-primary">Başvuru İçin</a>
-            </div>
+
 
              </div>
 

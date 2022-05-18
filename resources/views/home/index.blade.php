@@ -12,7 +12,7 @@
 
 
 @section('content')
-
+    @include('home.slider')
 
 
         <div class="page-section pb-0">
@@ -42,10 +42,10 @@
                 <div class="item">
                     <div class="card-doctor">
                         <div class="header">
-                            <img src="{{Storage::url($rs->image)}}" style="height: 550px; width: 640px">
+                            <img src="{{Storage::url($rs->image)}}" >
                             <div class="meta">
-                                <a href="#"><span class="mai-call"></span></a>
-                                <a href="#"><span class="mai-logo-whatsapp"></span></a>
+                                <a href="  {{route('policlinic' ,['id'=>$rs->id])}}" class="btn-danger" style="color: #0b2e13">DETAIL</a>
+
                             </div>
                         </div>
                         <div class="body">
