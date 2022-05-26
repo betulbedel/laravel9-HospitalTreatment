@@ -1,6 +1,6 @@
 @extends('layouts.frontbase')
 
-@section('title','About Us | '.$setting->title)
+@section('title','References | '.$setting->title)
 @section('description',$setting->description)
 @section('keywords',$setting->keywords)
 @section('icon',Storage::url($setting->icon))
@@ -12,10 +12,10 @@
                     <nav aria-label="Breadcrumb">
                         <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
                             <li class="breadcrumb-item"><a href="{{route('index')}}">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                            <li class="breadcrumb-item active" aria-current="page">References</li>
                         </ol>
                     </nav>
-                    <h1 class="font-weight-normal">About Us</h1>
+                    <h1 class="font-weight-normal">References</h1>
                 </div> <!-- .container -->
             </div> <!-- .banner-section -->
         </div>
@@ -25,7 +25,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-12 wow fadeInUp">
                         <div class="text-lg">
-                           {!! $setting->aboutus !!}
+                           {!! $setting->references!!}
                         </div>
                     </div>
                 </div>

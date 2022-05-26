@@ -21,6 +21,38 @@ class HomeController extends Controller
         ]);
     }
 
+    public function about(){
+
+
+        $setting= Setting::first();
+        return view('/home/about', [
+            'setting'=>$setting,
+
+
+        ]);
+    }
+
+    public function references(){
+
+        $setting= Setting::first();
+        return view('/home/references', [
+            'setting'=>$setting,
+
+
+        ]);
+    }
+
+
+    public function contact(){
+
+        $setting= Setting::first();
+        return view('/home/contact', [
+            'setting'=>$setting,
+
+
+        ]);
+    }
+
     public function policlinic($id){
 
         $data=Policlinic::find($id);
@@ -33,9 +65,7 @@ class HomeController extends Controller
         ]);
     }
 
-    public function about(){
-        return view('/home/about');
-    }
+
     public function doctors(){
         return view('/home/doctors');
     }
@@ -43,16 +73,12 @@ class HomeController extends Controller
         return view('/home/blog-details');
     }
 
-    public function contact(){
-        return view('/home/contact');
-    }
+
     public function blog(){
         return view('/home/blog');
     }
 
 
 
-    public function index2() {
-    return view('index2');
-}
+
 }

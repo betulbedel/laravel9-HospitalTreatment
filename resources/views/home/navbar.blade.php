@@ -1,5 +1,6 @@
 <!-- MENÜLER -->
 
+
 <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="#"><span class="text-primary">One</span>-Health</a>
@@ -20,10 +21,8 @@
         <div class="collapse navbar-collapse" id="navbarSupport">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/home/index">Anasayfa</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/home/about">Hakkımızda</a>
+                    <a class="nav-link" href="{{route('index')}}">Home</a>
+
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/home/doctors">Doktorlarımız</a>
@@ -32,7 +31,14 @@
                     <a class="nav-link" href="/home/blog">Haberlerimiz</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/home/contact">İletişim</a>
+                    <a class="nav-link" href="{{route('about')}}">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('references')}}">References</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('contact')}}">Contact</a>
                 </li>
                 <li class="nav-item">
                     <a class="btn btn-primary ml-lg-3" href="#">Giriş / Kayıt ol</a>
