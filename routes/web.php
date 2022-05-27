@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\AdminPanel\AdminPoliclinicController;
+use App\Http\Controllers\AdminPanel\ImageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use \App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryController;
+use \App\Http\Controllers\AdminPanel\MessageController as MessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,14 +22,19 @@ use \App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryControll
 Route::get('/', function () {
     return view('welcome');
 });
+//HOME ROUTES//
 
 Route::get('/home/index', [HomeController::class, 'index'])->name('index');
 Route::get('/home/about', [HomeController::class, 'about'])->name('about');
+Route::get('/home/references', [HomeController::class, 'references'])->name('references');
+Route::get('/home/contact', [HomeController::class, 'contact'])->name('contact');
+Route::post('/home/storemessage', [HomeController::class, 'storemessage'])->name('storemessage');
+
 Route::get('/home/doctors', [HomeController::class, 'doctors'])->name('doctors');
 Route::get('/home/blog-details', [HomeController::class, 'blogDeatils'])->name('blogDeatils');
-Route::get('/home/home/contact', [HomeController::class, 'contact'])->name('contact');
-Route::get('/home/blog', [HomeController::class, 'blog'])->name('blog');
 
+
+Route::get('/home/policlinic/{id}/', [HomeController::class, 'policlinic'])->name('policlinic');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -36,6 +43,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //ADMIN PANEL ROUTES//
 Route::prefix('admin')->name('admin.')->group(function () {
 Route::get('/', [AdminHomeController::class, 'index'])->name('index');
+
+    //GENERAL ROUTES//
+    Route::get('/setting', [AdminHomeController::class, 'setting'])->name('setting');
+    Route::post('/setting', [AdminHomeController::class, 'settingUpdate'])->name('setting.update');
 //ADMIN CATEGORY CONTROLLERS//
 Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function () {
 Route::get('/', 'index')->name('index');
@@ -56,4 +67,19 @@ Route::get('/show/{id}',  'show')->name('show');
         Route::get('/destroy/{id}',  'destroy')->name('destroy');
         Route::get('/show/{id}',  'show')->name('show');
     });
+    //ADMIN IMAGE GALLERY CONTROLLERS//
+    Route::prefix('/image')->name('image.')->controller(ImageController::class)->group(function () {
+        Route::get('/{pid}', 'index')->name('index');
+        Route::post('/store/{pid}', 'store')->name('store');
+        Route::get('/destroy/{pid}/{id}',  'destroy')->name('destroy');
+    });
+
+    //ADMIN Message CONTROLLERS//
+    Route::prefix('/message')->name('message.')->controller(MessageController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::post('/update/{id}',  'update')->name('update');
+        Route::get('/destroy/{id}',  'destroy')->name('destroy');
+        Route::get('/show/{id}',  'show')->name('show');
+    });
+
 });
