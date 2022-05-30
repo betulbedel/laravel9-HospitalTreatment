@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPanel\AdminPoliclinicController;
+use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -29,6 +30,7 @@ Route::get('/home/about', [HomeController::class, 'about'])->name('about');
 Route::get('/home/references', [HomeController::class, 'references'])->name('references');
 Route::get('/home/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/home/storemessage', [HomeController::class, 'storemessage'])->name('storemessage');
+Route::get('/home/faq', [HomeController::class, 'faq'])->name('faq');
 
 Route::get('/home/doctors', [HomeController::class, 'doctors'])->name('doctors');
 Route::get('/home/blog-details', [HomeController::class, 'blogDeatils'])->name('blogDeatils');
@@ -57,7 +59,7 @@ Route::post('/update/{id}',  'update')->name('update');
 Route::get('/destroy/{id}',  'destroy')->name('destroy');
 Route::get('/show/{id}',  'show')->name('show');
 });
-//ADMIN POLICLINIC CONTROLLERS//
+//ADMIN POLICLINIC ROUTES//
     Route::prefix('/policlinic')->name('policlinic.')->controller(AdminPoliclinicController::class)->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/create',  'create')->name('create');
@@ -67,16 +69,29 @@ Route::get('/show/{id}',  'show')->name('show');
         Route::get('/destroy/{id}',  'destroy')->name('destroy');
         Route::get('/show/{id}',  'show')->name('show');
     });
-    //ADMIN IMAGE GALLERY CONTROLLERS//
+    //ADMIN IMAGE GALLERY ROUTES//
     Route::prefix('/image')->name('image.')->controller(ImageController::class)->group(function () {
         Route::get('/{pid}', 'index')->name('index');
         Route::post('/store/{pid}', 'store')->name('store');
         Route::get('/destroy/{pid}/{id}',  'destroy')->name('destroy');
     });
 
-    //ADMIN Message CONTROLLERS//
+    //ADMIN Message ROUTES//
     Route::prefix('/message')->name('message.')->controller(MessageController::class)->group(function () {
         Route::get('/', 'index')->name('index');
+        Route::post('/update/{id}',  'update')->name('update');
+        Route::get('/destroy/{id}',  'destroy')->name('destroy');
+        Route::get('/show/{id}',  'show')->name('show');
+    });
+
+
+
+    //ADMIN Faq ROUTES//
+    Route::prefix('/faq')->name('faq.')->controller(FaqController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create',  'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/edit/{id}',  'edit')->name('edit');
         Route::post('/update/{id}',  'update')->name('update');
         Route::get('/destroy/{id}',  'destroy')->name('destroy');
         Route::get('/show/{id}',  'show')->name('show');
