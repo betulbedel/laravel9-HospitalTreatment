@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Faq;
+use App\Models\Message;
 use App\Models\Policlinic;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -53,6 +55,22 @@ class HomeController extends Controller
         ]);
     }
 
+    public function storemessage(Request $request){
+        $data = new Message();
+        $data->name = $request->input('name');
+        $data->email = $request->input('email');
+        $data->phone = $request->input('phone');
+        $data->subject = $request->input('subject');
+        $data->message = $request->input('message');
+        $data->ip = request()->ip();
+        $data->save();
+
+
+        return redirect()->route('contact')->with('info','Your message has been sent. Thank You!');
+
+    }
+
+
     public function policlinic($id){
 
         $data=Policlinic::find($id);
@@ -61,6 +79,17 @@ class HomeController extends Controller
 
             'data'=>$data,
              'images'=>$images
+
+        ]);
+    }
+    public function faq(){
+
+        $setting= Setting::first();
+        $datalist = Faq::all();
+        return view('/home/faq', [
+            'setting'=>$setting,
+            'datalist'=>$datalist,
+
 
         ]);
     }
