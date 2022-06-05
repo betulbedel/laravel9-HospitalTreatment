@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPanel\AdminPoliclinicController;
+use App\Http\Controllers\AdminPanel\CommentController ;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\ImageController;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,7 @@ Route::get('/home/references', [HomeController::class, 'references'])->name('ref
 Route::get('/home/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/home/storemessage', [HomeController::class, 'storemessage'])->name('storemessage');
 Route::get('/home/faq', [HomeController::class, 'faq'])->name('faq');
+Route::post('/home/storecomment', [HomeController::class, 'storecomment'])->name('storecomment');
 
 Route::get('/home/doctors', [HomeController::class, 'doctors'])->name('doctors');
 Route::get('/home/blog-details', [HomeController::class, 'blogDeatils'])->name('blogDeatils');
@@ -96,5 +98,13 @@ Route::get('/show/{id}',  'show')->name('show');
         Route::get('/destroy/{id}',  'destroy')->name('destroy');
         Route::get('/show/{id}',  'show')->name('show');
     });
+    //ADMIN COMMENT ROUTES//
+    Route::prefix('/comment')->name('comment.')->controller(CommentController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::post('/update/{id}',  'update')->name('update');
+        Route::get('/destroy/{id}',  'destroy')->name('destroy');
+        Route::get('/show/{id}',  'show')->name('show');
+    });
+
 
 });

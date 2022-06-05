@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Faq;
 use App\Models\Message;
 use App\Models\Policlinic;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -69,16 +71,32 @@ class HomeController extends Controller
         return redirect()->route('contact')->with('info','Your message has been sent. Thank You!');
 
     }
+    public function storecomment(Request $request){
+       // dd($request); //check your values
+        $data = new Comment();
+        $data->user_id = Auth::id();
+        $data->policlinic_id = $request->input('policlinic_id');
+        $data->subject = $request->input('subject');
+        $data->comment = $request->input('comment');
+        $data->rate = $request->input('rate');
+        $data->ip = request()->ip();
+        $data->save();
+
+
+        return redirect()->route('policlinic', ['id'=>$request->input('policlinic_id')])->with('success','Your comment has been sent. Thank You!');
+
+    }
 
 
     public function policlinic($id){
 
         $data=Policlinic::find($id);
         $images = DB::table('images')->where('policlinic_id',$id)->get();
+        $comments = Comment::where('policlinic_id',$id)->where('status','True')->get();
         return view('/home/policlinic', [
-
             'data'=>$data,
-             'images'=>$images
+             'images'=>$images,
+            'comments'=>$comments
 
         ]);
     }
