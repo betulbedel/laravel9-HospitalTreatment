@@ -18,6 +18,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+
         <div class="collapse navbar-collapse" id="navbarSupport">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
@@ -41,9 +42,44 @@
                     <a class="nav-link" href="{{route('contact')}}">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-primary ml-lg-3" href="#">Giriş / Kayıt ol</a>
+                    <a class="nav-link" href="{{route('faq')}}">FAQ</a>
                 </li>
+                <li class="nav-item">
+                 @auth()
+                        <a href="{{route('userpanel.index')}}" class="btn btn-primary ml-lg-3"> {{Auth::user()->name}}</a>
+                        <a  class="btn btn-primary ml-lg-3" href= "/home/logoutuser">  Log out</a>
+                    @endauth
+
+                </li>
+                @guest()
+                <li class="nav-item">
+                    <a href="/home/registeruser" class="btn btn-primary ml-lg-3">Kayıt Ol</a> <a href="/home/loginuser" class="btn btn-primary ml-lg-3">Giriş yap</a>
+                </li>
+                @endguest
             </ul>
+
+            <style>
+                .dropdown {
+                    position: relative;
+                    display: inline-block;
+                }
+
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: #f9f9f9;
+                    min-width: 160px;
+                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                    padding: 12px 16px;
+                    z-index: 1;
+                }
+
+                .dropdown:hover .dropdown-content {
+                    display: block;
+                }
+            </style>
+
+
         </div> <!-- .navbar-collapse -->
     </div> <!-- .container -->
 </nav>

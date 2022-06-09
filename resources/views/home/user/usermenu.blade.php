@@ -1,5 +1,5 @@
 <li class="panel">
-    <a href="#" >
+    <a href="{{route('userpanel.index')}}" >
         <i class="icon-list-ol "></i> My profile</a>
 </li>
 <li class="panel">
@@ -7,7 +7,7 @@
         <i class="icon-tag"></i> My Appointments</a>
 </li>
 <li class="panel">
-    <a href="#" >
+    <a href="{{route('userpanel.comments')}}" >
         <i class="icon-tag"></i> My Comments</a>
 </li>
 
