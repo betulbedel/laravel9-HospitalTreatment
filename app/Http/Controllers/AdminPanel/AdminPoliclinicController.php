@@ -18,9 +18,10 @@ class AdminPoliclinicController extends Controller
      */
     public function index()
     {
+
         //
         $data= Policlinic::all();
-        return view('admin.policlinic.index',[
+       return view('admin.policlinic.index',[
             'data'=> $data
         ]);
     }
@@ -79,7 +80,7 @@ class AdminPoliclinicController extends Controller
     public function show(Policlinic $policlinic, $id)
     {
         //
-        $data= Policlinic::find($id);
+        $data= Policlinic::find($id);;
         return view('admin.policlinic.show',[
             'data'=> $data
         ]);
@@ -123,6 +124,7 @@ class AdminPoliclinicController extends Controller
         $data->detail = $request->detail;
         $data->date = $request->date;
         $data->specialist = $request->specialist;
+        $data->status = $request->status;
         if ($request->file('image')) {
             $data->image= $request->file('image')->store('images');
         }
@@ -140,7 +142,10 @@ class AdminPoliclinicController extends Controller
     {
         //
         $data= Policlinic::find($id);
-        Storage::delete($data->image);
+        if ($data->image && Storage::disk('public')->exists($data->image)) {
+            Storage::delete($data->image);
+        }
+
         $data->delete();
         return redirect('admin/policlinic');
     }
