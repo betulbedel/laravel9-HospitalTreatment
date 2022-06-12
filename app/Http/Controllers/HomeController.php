@@ -57,6 +57,7 @@ class HomeController extends Controller
         ]);
     }
 
+
     public function storemessage(Request $request){
         $data = new Message();
         $data->name = $request->input('name');
@@ -71,6 +72,7 @@ class HomeController extends Controller
         return redirect()->route('contact')->with('info','Your message has been sent. Thank You!');
 
     }
+
     public function storecomment(Request $request){
        // dd($request); //check your values
         $data = new Comment();
@@ -83,7 +85,7 @@ class HomeController extends Controller
         $data->save();
 
 
-        return redirect()->route('policlinic', ['id'=>$request->input('policlinic_id')])->with('success','Your comment has been sent. Thank You!');
+        return redirect()->back()->with('success','Your comment has been sent. Thank You!');
 
     }
 
@@ -92,7 +94,7 @@ class HomeController extends Controller
 
         $data=Policlinic::find($id);
         $images = DB::table('images')->where('policlinic_id',$id)->get();
-        $comments = Comment::where('policlinic_id',$id)->where('status','True')->get();
+        $comments = Comment::where('policlinic_id',$id)->get();
         return view('/home/policlinic', [
             'data'=>$data,
              'images'=>$images,
